@@ -1,0 +1,28 @@
+{
+  "name": "microservices-mongo-qa",
+  "version": "1.0.0",
+  "description": "Project for training microservices testing using mocha",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "mocha": "^8.4.0"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/juniorschmitz/microservices-mongo-qa.git"
+  },
+  "keywords": [
+    "Microservices",
+    "Mocha",
+    "Testing"
+  ],
+  "author": "Jacques de Jesus Figueiredo Schmitz Junior",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/juniorschmitz/microservices-mongo-qa/issues"
+  },
+  "homepage": "https://github.com/juniorschmitz/microservices-mongo-qa#readme"
+}

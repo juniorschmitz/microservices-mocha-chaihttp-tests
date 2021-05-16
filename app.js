@@ -1,7 +1,8 @@
-const express = require("express");
+import express from 'express';
+
 const app = express();
 
-app.get("/hello", function(req, res) {
+app.get("/hello", (req, res) => {
   res.status(200).json({ nessage: "Hello, Nodejs with express." })
 })
 

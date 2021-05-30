@@ -8,15 +8,15 @@ const app = require("../app");
 const request = chai.request.agent(app);
 const expect = chai.expect;
 
-describe("Get Task", function() {
+describe("Get Task", () => {
 
     context("given it has registered tasks", () => {
 
         before((done) => {
             let tasks = [
-                { title: "Sleep", email: "testtest@gmail.com", done: false },
-                { title: "Study software engineering", email: "testtest@gmail.com", done: false },
-                { title: "Study test automation", email: "testtest@gmail.com", done: true }
+                { title: "Sleep", owner: "testtest@gmail.com", done: false },
+                { title: "Study software engineering", owner: "testtest@gmail.com", done: false },
+                { title: "Study test automation", owner: "testtest@gmail.com", done: true }
             ]
 
             tasksModel.insertMany(tasks);
@@ -27,8 +27,8 @@ describe("Get Task", function() {
             request
                 .get("/task")
                 .end((err, res) => {
-                    expect(res).to.has.status(200);
-                    expect(res.body.data).to.be.an('array');
+                    expect(res).to.has.status(200)
+                    expect(res.body.data).to.be.an('array')
                     done();
                 })
         })
@@ -49,7 +49,7 @@ describe("Get Task", function() {
     context("given it has a task id", () => {
 
           let tasks = [
-              { title: "Read a book about Golang", email: "testtest@gmail.com", done: false }
+              { title: "Read a book about Golang", owner: "testtest@gmail.com", done: false }
           ]
 
           tasksModel.insertMany(tasks, (err, result) => {
@@ -57,8 +57,8 @@ describe("Get Task", function() {
             request
                 .get("/task" + task_id)
                 .end((err, res) => {
-                    expect(res).to.has.status(200);
-                    expect(res.body.data.title).to.equal(tasks[0].title);
+                    expect(res).to.has.status(200)
+                    expect(res.body.data.title).to.equal(tasks[0].title)
                     done();
                 })
           });
@@ -69,8 +69,8 @@ describe("Get Task", function() {
         request
             .get("/task" + task_id)
             .end((err, res) => {
-                expect(res).to.has.status(404);
-                expect(res.body.data.title).to.eql({});
+                expect(res).to.has.status(404)
+                expect(res.body.data.title).to.eql({})
                 done();
             })
     })

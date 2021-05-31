@@ -22,7 +22,7 @@
   "scripts": {
     "start": "babel-node app.js",
     "dev": "nodemon --exec babel-node app.js",
-    "test": "npm run dropdb_windows & mocha test --require babel-register --exit",
+    "test": "npm run dropdb_windows & set NODE_ENV=dev&mocha test --require babel-register --exit",
     "dropdb_windows": "scripts\\dropdb.bat",
     "dropdb_unix": "./scripts/dropdb.sh"
   },
